@@ -2,7 +2,8 @@
 
 namespace Ajax\Controller;
 
-use Zend\Mvc\Controller\ActionController;
+use Zend\Mvc\Controller\ActionController,
+    Zend\Mcv\Controller\Action\HelperBroker;
 
 class UserController extends ActionController
 {

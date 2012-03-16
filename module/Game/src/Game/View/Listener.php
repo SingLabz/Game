@@ -79,8 +79,15 @@ class Listener implements ListenerAggregate
         $routeMatch = $e->getRouteMatch();
         $controller = $routeMatch->getParam('controller', 'index');
         $action     = $routeMatch->getParam('action', 'index');
+        
+        //special case for ajax module. only use one template
+        if (stristr($controller, 'ajax-')) {
+            $controller = 'default';
+            $action = 'index';
+        }
+        
         $script     = $controller . '/' . $action . '.phtml';
-
+        
         $vars       = $e->getResult();
         if (is_scalar($vars)) {
             $vars = array('content' => $vars);

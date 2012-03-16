@@ -1,5 +1,6 @@
 <?php
 return array(
+    'layout'                => 'layout/json.phtml',
     'di'                    => array(
         'instance' => array(
             'alias' => array(
@@ -11,7 +12,7 @@ return array(
                     'resolver' => 'Zend\View\TemplatePathStack',
                     'options'  => array(
                         'script_paths' => array(
-                            'admin' => __DIR__ . '/../view',
+                            'ajax' => __DIR__ . '/../view',
                         ),
                     ),
                 ),

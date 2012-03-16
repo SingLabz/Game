@@ -1,3 +1,12 @@
 Welcome to my readme.
 
-Ivo will start helping now
+Modules:
+
+1) Admin
+All the stuff releated with admining. Adding new unit etc. Controller alias will always be "admin-".
+
+2) Ajax
+Handles all ajax request neede. All controller will have alias starting with "ajax-". Uses json layout and only view.
+
+3) Game
+Main applications. All model are under here. Also layout and error pages.
