@@ -3,36 +3,39 @@ return array(
     'di'                    => array(
         'instance' => array(
             'alias' => array(
-                'index' => 'Ajax\Controller\IndexController',
+                'auser' => 'Ajax\Controller\IndexController',
             ),
-
+            /*'Album\Controller\AlbumController' => array(
+                'parameters' => array(
+                    'album' => 'Album\Model\Album'
+                ),
+            ),
+            'Album\Model\Album' => array(
+                'parameters' => array(
+                    'config' => 'Zend\Db\Adapter\Mysqli'
+                ),
+            ),
+            'Zend\Db\Adapter\Mysqli' => array(
+                'parameters' => array(
+                    'config' => array(
+                        'host' => 'localhost',
+                        'port' => '3306',
+                        'username' => 'root',
+                        'password' => '',
+                        'dbname' => 'zf2',
+                    ),
+                ),
+            ),*/
+            'Zend\View\PhpRenderer' => array(
+                'parameters' => array(
+                    'options'  => array(
+                        'script_paths' => array(
+                            'ajax' => __DIR__ . '/../view',
+                        ),
+                    ),
+                ),
+            ),
             
         ),
-    ),
-    /*'routes' => array(
-        'default' => array(
-            'type'    => 'Zend\Mvc\Router\Http\Segment',
-            'options' => array(
-                'route'    => '/[:controller[/:action]]',
-                'constraints' => array(
-                    'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                    'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-                ),
-                'defaults' => array(
-                    'controller' => 'index',
-                    'action'     => 'index',
-                ),
-            ),
-        ),
-        'home' => array(
-            'type' => 'Zend\Mvc\Router\Http\Literal',
-            'options' => array(
-                'route'    => '/',
-                'defaults' => array(
-                    'controller' => 'index',
-                    'action'     => 'index',
-                ),
-            ),
-        ),
-    ),*/
+    )
 );
