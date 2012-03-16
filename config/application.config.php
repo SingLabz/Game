@@ -2,7 +2,8 @@
 return array(
     'modules' => array(
         'Game',
-        'Ajax'
+        'Ajax',
+        'Admin',
     ),
     'module_listener_options' => array( 
         'config_cache_enabled' => false,

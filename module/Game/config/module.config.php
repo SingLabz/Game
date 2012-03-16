@@ -6,10 +6,11 @@ return array(
         'instance' => array(
             'alias' => array(
                 'index' => 'Game\Controller\IndexController',
+                'user' => 'Game\Controller\UserController',
                 'error' => 'Game\Controller\ErrorController',
                 'view'  => 'Zend\View\PhpRenderer',
             ),
-            'Game\Controller\IndexController' => array(
+            'Game\Controller\UserController' => array(
                 'parameters' => array(
                     'user' => 'Game\Model\User'
                 ),
@@ -51,7 +52,7 @@ return array(
                     'resolver' => 'Zend\View\TemplatePathStack',
                     'options'  => array(
                         'script_paths' => array(
-                            'application' => __DIR__ . '/../view',
+                            'game' => __DIR__ . '/../view',
                         ),
                     ),
                 ),

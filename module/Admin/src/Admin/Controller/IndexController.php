@@ -4,7 +4,7 @@ namespace Ajax\Controller;
 
 use Zend\Mvc\Controller\ActionController;
 
-class UserController extends ActionController
+class IndexController extends ActionController
 {
     public function indexAction()
     {
