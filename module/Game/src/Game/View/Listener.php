@@ -165,6 +165,7 @@ class Listener implements ListenerAggregate
                     'display_exceptions' => $this->displayExceptions(),
                 );
                 $response->setStatusCode(404);
+                $content = $this->view->render('error/404.phtml', $vars);
                 break;
 
             case Application::ERROR_EXCEPTION:
@@ -175,11 +176,10 @@ class Listener implements ListenerAggregate
                     'display_exceptions' => $this->displayExceptions(),
                 );
                 $response->setStatusCode(500);
+                $content = $this->view->render('error/index.phtml', $vars);
                 break;
         }
-
-        $content = $this->view->render('error/index.phtml', $vars);
-
+        
         $e->setResult($content);
 
         return $this->renderLayout($e);
