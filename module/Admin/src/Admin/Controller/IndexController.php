@@ -1,6 +1,6 @@
 <?php
 
-namespace Ajax\Controller;
+namespace Admin\Controller;
 
 use Zend\Mvc\Controller\ActionController;
 
