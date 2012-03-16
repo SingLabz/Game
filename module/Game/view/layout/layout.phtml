@@ -1,0 +1,45 @@
+<?php
+$this->headTitle()->setSeparator(' - ')
+        ->setAutoEscape(false);
+
+$basePath = $this->basePath();
+$this->headLink()->appendStylesheet($basePath . '/css/main.css');
+
+$this->headLink(array(
+    'rel' => 'shortcut icon',
+    'type' => 'image/vnd.microsoft.icon',
+    'href' => $basePath . '/images/favicon.ico',
+));
+
+//$this->headScript()->appendFile($basePath . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE9',));
+
+echo $this->doctype();
+?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('Game') ?>
+
+        <?php echo $this->headMeta() ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink() ?>
+
+        <style type="text/css">
+            body {
+                padding-top: 60px;
+            }
+        </style>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript() ?>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <?php echo $this->raw('content'); ?>
+        </div>
+    </body>
+</html>
