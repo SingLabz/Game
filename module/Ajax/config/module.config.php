@@ -1,6 +1,6 @@
 <?php
 return array(
-    'layout'                => 'layout/json.phtml',
+    //'layout'                => 'layout/json.phtml',
     'di'                    => array(
         'instance' => array(
             'alias' => array(

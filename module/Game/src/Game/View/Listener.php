@@ -84,6 +84,7 @@ class Listener implements ListenerAggregate
         if (stristr($controller, 'ajax-')) {
             $controller = 'default';
             $action = 'index';
+            $this->layout = 'layout/json.phtml';
         }
         
         $script     = $controller . '/' . $action . '.phtml';
@@ -122,7 +123,7 @@ class Listener implements ListenerAggregate
         if (false !== ($contentParam = $e->getParam('content', false))) {
             $vars['content'] = $contentParam;
         }
-
+        
         $layout   = $this->view->render($this->layout, $vars);
         $response->setContent($layout);
         return $response;
