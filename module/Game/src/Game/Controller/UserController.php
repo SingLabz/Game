@@ -7,7 +7,7 @@ use Zend\Mvc\Controller\ActionController,
 
 class UserController extends ActionController
 {
-    protected $album;
+    protected $user;
     
     public function setUser(User $user)
     {
