@@ -16,28 +16,20 @@ return array(
                     'config' => 'Zend\Db\Adapter\Mysqli'
                 ),
             ),
-            'Zend\Db\Adapter\Mysqli' => array(
+            'Zend\View\Resolver\TemplatePathStack' => array(
                 'parameters' => array(
-                    'config' => array(
-                        'host' => 'localhost',
-                        'port' => '3306',
-                        'username' => 'root',
-                        'password' => '',
-                        'dbname' => 'game',
+                    'paths' => array(
+                        'ajax' => __DIR__ . '/../view',
                     ),
                 ),
             ),
-            // Setup the PhpRenderer
-            'Zend\View\PhpRenderer' => array(
+            // View for the layout
+            'Zend\Mvc\View\DefaultRenderingStrategy' => array(
                 'parameters' => array(
-                    'resolver' => 'Zend\View\TemplatePathStack',
-                    'options'  => array(
-                        'script_paths' => array(
-                            'ajax' => __DIR__ . '/../view',
-                        ),
-                    ),
+                    'layoutTemplate' => 'layout/json',
                 ),
             ),
+
         ),
     )
 );
