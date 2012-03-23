@@ -26,12 +26,6 @@ echo $this->doctype();
         <!-- Le styles -->
         <?php echo $this->headLink() ?>
 
-        <style type="text/css">
-            body {
-                padding-top: 60px;
-            }
-        </style>
-
         <!-- Scripts -->
         <?php echo $this->headScript() ?>
 
@@ -46,7 +40,7 @@ echo $this->doctype();
             </div>
         </div>
         <div class="container">
-            <?php echo $this->raw('content'); ?>
+            <?php echo $this->content; ?>
         </div>
         <div class="footer">
             <div class="links"><a href="#">Something</a></div>
