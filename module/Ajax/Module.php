@@ -2,7 +2,9 @@
 
 namespace Ajax;
 
-use Zend\Module\Consumer\AutoloaderProvider;
+use Zend\Module\Manager,
+    Zend\EventManager\StaticEventManager,
+    Zend\Module\Consumer\AutoloaderProvider;
 
 class Module implements AutoloaderProvider
 {
@@ -24,5 +26,5 @@ class Module implements AutoloaderProvider
     {
         return include __DIR__ . '/config/module.config.php';
     }
-    
+
 }

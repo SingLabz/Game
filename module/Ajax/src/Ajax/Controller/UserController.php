@@ -18,17 +18,11 @@ class UserController extends ActionController
     }
     
     public function indexAction()
-    {
-        $v = new ViewModel();
-        $v->setTemplate('default/index');
-        $this->getBroker()->load('layout')->setLayout('layout/json');
-        return $v;
-        //var_dump($this->getLocator());
-        //var_dump($this->getEvent());
-        //var_dump($this->getBroker()->load('layout')->setTemplate('default/json'));
-        $this->getEvent()->getViewModel()->setTemplate('default/index');
-        //die();
-        return array('data' => array('error' => 1, 'msg' => 'This is index action. Not used for anything.'));
+    {       
+        $viewModel = new ViewModel();
+        $viewModel->setTerminal(true);
+        $viewModel->setTemplate('default/index');
+        return $viewModel;
     }
     
     public function getAction()
