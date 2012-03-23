@@ -27,15 +27,23 @@ class UserController extends ActionController
     
     public function getAction()
     {
+        $viewModel = new ViewModel();
+        $viewModel->setTerminal(true);
+        $viewModel->setTemplate('default/index');
+        
         try {
             $id = $this->getRequest()->query()->get('id', 0);
             if ($id === 0) {
+                //var_dump($viewModel);die();
                 throw new InvalidArgumentException('Valid param(s) missing',120);
             }
             $row = $this->user->get($id);
-        } catch (Exception $e) {
-            return array('data' => array('error' => $e->getCode(), 'msg' => $e->getMessage()));
+            $viewModel->setVariables(array('data' => array('result' => $row, 'error' => 0)));
+            return $viewModel;
+        } catch (InvalidArgumentException $e) {
+            $viewModel->setVariables(array('data' => array('error' => $e->getCode(), 'msg' => $e->getMessage())));
+            return $viewModel;
         }
-        return array('data' => array('result' => $row, 'error' => 0));
+        return $viewModel;
     }
 }
