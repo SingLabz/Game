@@ -9,7 +9,7 @@ class IndexController extends ActionController
 {  
     public function indexAction()
     {
-        $this->layout('layout/homepage');
+        //$this->layout('layout/homepage');
         //$this->getLocator()->get('view')->layout()->setLayout('homepage');
         //return $this->redirect()->toRoute('foo-success');
         //return new ViewModel();

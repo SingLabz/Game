@@ -44,6 +44,5 @@ class UserController extends ActionController
             $viewModel->setVariables(array('data' => array('error' => $e->getCode(), 'msg' => $e->getMessage())));
             return $viewModel;
         }
-        return $viewModel;
     }
 }

@@ -3,16 +3,23 @@ return array(
     'di'                    => array(
         'instance' => array(
             'alias' => array(
-                'admin-index' => 'Admin\Controller\IndexController',
+                'admin-index'   => 'Admin\Controller\IndexController',
+                'admin-user'    => 'Admin\Controller\UserController',
             ), 
-            // Setup the PhpRenderer
-            'Zend\View\PhpRenderer' => array(
+            'Admin\Controller\IndexController' => array(
                 'parameters' => array(
-                    'resolver' => 'Zend\View\TemplatePathStack',
-                    'options'  => array(
-                        'script_paths' => array(
-                            'admin' => __DIR__ . '/../view',
-                        ),
+                    'user' => 'Game\Model\User'
+                ),
+            ),
+            'Admin\Controller\UserController' => array(
+                'parameters' => array(
+                    'user' => 'Game\Model\User'
+                ),
+            ),
+            'Zend\View\Resolver\TemplatePathStack' => array(
+                'parameters' => array(
+                    'paths' => array(
+                        'admin' => __DIR__ . '/../view',
                     ),
                 ),
             ),

@@ -99,7 +99,10 @@ return array(
             'Zend\View\Resolver\TemplateMapResolver' => array(
                 'parameters' => array(
                     'map' => array(
-                        'layout/layout' => __DIR__ . '/../view/layout/default.phtml',
+                        'layout/default' => __DIR__ . '/../view/layout/default.phtml',
+                        'layout/admin' => __DIR__ . '/../view/layout/admin.phtml',
+                        'layout/game' => __DIR__ . '/../view/layout/game.phtml',
+                        'layout/login' => __DIR__ . '/../view/layout/login.phtml',
                     ),
                 ),
             ),
@@ -108,7 +111,7 @@ return array(
             'Zend\View\Resolver\TemplatePathStack' => array(
                 'parameters' => array(
                     'paths' => array(
-                        'application' => __DIR__ . '/../view',
+                        'game' => __DIR__ . '/../view',
                     ),
                 ),
             ),

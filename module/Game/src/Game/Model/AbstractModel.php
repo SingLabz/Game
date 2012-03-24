@@ -3,7 +3,8 @@
 namespace Game\Model;
 
 use Zend\Db\Table\AbstractTable,
-    Zend\Db\Table\Exception;
+    Zend\Db\Table\Exception,
+    Zend\Db\Table\Select;
 
 abstract class AbstractModel extends AbstractTable
 {

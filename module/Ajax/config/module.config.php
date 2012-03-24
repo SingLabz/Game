@@ -11,11 +11,6 @@ return array(
                     'user' => 'Game\Model\User'
                 ),
             ),
-            'Game\Model\User' => array(
-                'parameters' => array(
-                    'config' => 'Zend\Db\Adapter\Mysqli'
-                ),
-            ),
             'Zend\View\Resolver\TemplatePathStack' => array(
                 'parameters' => array(
                     'paths' => array(

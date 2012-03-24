@@ -1,0 +1,39 @@
+body {
+    text-align:center;
+    margin:0 auto;
+    width:1200px;
+}
+.main {
+    text-align:center;
+    width:1200px;
+    float:left;
+}
+
+/* HEADER */
+.header {
+    width:100%;
+    height:40px;
+    margin-bottom:20px;
+}
+/* MENU */
+.menu {
+    width:100%;
+    height:20px;
+    float:left;
+}
+.menu ul {
+    margin:0 auto;
+}
+.menu ul li {
+    float:left;
+    padding:10px;
+    list-style-type: none;
+}
+/* FOOTER */
+.footer {
+    padding-top:10px;
+}
+
+/* CONTENT */
+.container {
+}

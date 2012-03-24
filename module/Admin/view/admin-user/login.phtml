@@ -1,0 +1,15 @@
+Log in
+<?php if (!empty($error)) {?>
+<div class="errors">
+    <?php echo $error ?>
+</div>
+<?php } ?>
+<form action="" method="POST">
+    <label for="email">E-mail</label>
+    <input type="text" name="email" value="" id="email" />
+    
+    <label for="passw">Password</label>
+    <input type="password" name="passw" value="" id="passw" />
+    
+    <input type="submit" name="Login" value="Login" />
+</form>

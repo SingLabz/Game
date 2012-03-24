@@ -3,7 +3,7 @@ $this->headTitle()->setSeparator(' - ')
         ->setAutoEscape(false);
 
 $basePath = $this->basePath();
-$this->headLink()->appendStylesheet($basePath . '/css/main.css');
+$this->headLink()->appendStylesheet($basePath . '/css/default.css');
 
 $this->headLink(array(
     'rel' => 'shortcut icon',
@@ -32,19 +32,17 @@ echo $this->doctype();
     </head>
 
     <body>
-        <div class="header">
-            <div class="menu">
-                <ul>
-                    <li><a href="#">P1</a></li>
-                </ul>
+        <div class="main">
+            <div class="header">
+                <?php echo $this->partial('partial/default-menu');?>
             </div>
-        </div>
-        <div class="container">
-            <?php echo $this->content; ?>
-        </div>
-        <div class="footer">
-            <div class="links"><a href="#">Something</a></div>
-            <div class="copyright">&copy; Copyright 2011 - 2012 Kaur. All rights reserved.</div>
+            <div class="container">
+                <?php echo $this->content; ?>
+            </div>
+            <div class="footer">
+                <div class="links"><a href="#">Something</a></div>
+                <div class="copyright">&copy; Copyright 2011 - 2012 Kaur. All rights reserved.</div>
+            </div>
         </div>
     </body>
 </html>
