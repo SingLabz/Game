@@ -178,13 +178,32 @@ class Listener implements ListenerAggregate
 
             case Application::ERROR_EXCEPTION:
             default:
-                $vars = array(
-                    'message'            => 'An error occurred during execution; please try again later.',
-                    'exception'          => $e->getParam('exception'),
-                    'display_exceptions' => $this->displayExceptions(),
-                );
-                $response->setStatusCode(500);
-                $content = $this->view->render('error/index.phtml', $vars);
+                $routeMatch = $e->getRouteMatch();
+                $controller = $routeMatch->getParam('controller', 'index');
+
+                //special case for ajax module.
+                if (stristr($controller, 'ajax-')) {
+                    $controller = 'default';
+                    $action = 'index';
+                    $this->layout = 'layout/json.phtml';
+                    
+                    $vars = array(
+                        'data' => array(
+                            'error' => $e->getParam('exception')->getCode(),
+                            'msg' => $e->getParam('exception')->getMessage()
+                        )
+                    );
+                    $content = $this->view->render('default/index.phtml', $vars);
+                } else {
+                
+                    $vars = array(
+                        'data'            => 'An error occurred during execution; please try again later.',
+                        'exception'          => $e->getParam('exception'),
+                        'display_exceptions' => $this->displayExceptions(),
+                    );
+                    $response->setStatusCode(500);
+                    $content = $this->view->render('error/index.phtml', $vars);
+                }
                 break;
         }
         

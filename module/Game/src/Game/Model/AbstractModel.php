@@ -2,7 +2,8 @@
 
 namespace Game\Model;
 
-use Zend\Db\Table\AbstractTable;
+use Zend\Db\Table\AbstractTable,
+    Zend\Db\Table\Exception;
 
 abstract class AbstractModel extends AbstractTable
 {
@@ -10,8 +11,9 @@ abstract class AbstractModel extends AbstractTable
     {
         $id = intval($id);
         $row = $this->fetchRow('id='.$id);
-        if ($row) {
-            throw new Exception("Row not found");
+        
+        if (!$row) {
+            throw new Exception('User with id '.$id.' not found.', 100);
         }
         return $row->toArray();
     }

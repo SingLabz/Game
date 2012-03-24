@@ -1,9 +1,9 @@
 <?php
 return array(
     'modules' => array(
-        'Game',
         'Ajax',
         'Admin',
+        'Game',
     ),
     'module_listener_options' => array( 
         'config_cache_enabled' => false,

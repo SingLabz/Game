@@ -26,20 +26,25 @@ echo $this->doctype();
         <!-- Le styles -->
         <?php echo $this->headLink() ?>
 
-        <style type="text/css">
-            body {
-                padding-top: 60px;
-            }
-        </style>
-
         <!-- Scripts -->
         <?php echo $this->headScript() ?>
 
     </head>
 
     <body>
+        <div class="header">
+            <div class="menu">
+                <ul>
+                    <li><a href="#">P1</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="container">
-            <?php echo $this->raw('content'); ?>
+            <?php echo $this->content; ?>
+        </div>
+        <div class="footer">
+            <div class="links"><a href="#">Something</a></div>
+            <div class="copyright">&copy; Copyright 2011 - 2012 Kaur. All rights reserved.</div>
         </div>
     </body>
 </html>
