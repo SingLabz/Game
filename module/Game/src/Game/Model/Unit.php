@@ -2,7 +2,7 @@
 
 namespace Game\Model;
 
-class User extends AbstractModel
+class Unit extends AbstractModel
 {
     protected $_name = 'units';
    

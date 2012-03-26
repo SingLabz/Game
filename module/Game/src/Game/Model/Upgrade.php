@@ -2,7 +2,7 @@
 
 namespace Game\Model;
 
-class User extends AbstractModel
+class Upgrade extends AbstractModel
 {
     protected $_name = 'upgrades';
    

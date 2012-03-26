@@ -18,6 +18,31 @@ return array(
                     'config' => 'Zend\Db\Adapter\Mysqli'
                 ),
             ),
+            'Game\Model\Unit' => array(
+                'parameters' => array(
+                    'config' => 'Zend\Db\Adapter\Mysqli'
+                ),
+            ),
+            'Game\Model\Building' => array(
+                'parameters' => array(
+                    'config' => 'Zend\Db\Adapter\Mysqli'
+                ),
+            ),
+            'Game\Model\Upgrade' => array(
+                'parameters' => array(
+                    'config' => 'Zend\Db\Adapter\Mysqli'
+                ),
+            ),
+            'Game\Model\Resource' => array(
+                'parameters' => array(
+                    'config' => 'Zend\Db\Adapter\Mysqli'
+                ),
+            ),
+            'Game\Model\Base' => array(
+                'parameters' => array(
+                    'config' => 'Zend\Db\Adapter\Mysqli'
+                ),
+            ),
             'Zend\Db\Adapter\Mysqli' => array(
                 'parameters' => array(
                     'config' => array(

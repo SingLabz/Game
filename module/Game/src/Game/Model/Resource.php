@@ -2,7 +2,7 @@
 
 namespace Game\Model;
 
-class User extends AbstractModel
+class Resource extends AbstractModel
 {
     protected $_name = 'resources';
    

@@ -15,6 +15,15 @@ class UserController extends ActionController
         return $this;
     }
     
+    public function indexAction()
+    {
+        if (!$this->user->checkAuth()) {
+            return $this->redirect()->toUrl('/admin-user/login');
+        }
+        
+        return array();
+    }
+    
     public function loginAction()
     {
         if ($this->getRequest()->isPost()) {
