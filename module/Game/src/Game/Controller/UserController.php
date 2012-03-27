@@ -21,19 +21,5 @@ class UserController extends ActionController
             'users' => $this->user->fetchAll()->toArray(),
         );
     }
-    
-    public function addAction()
-    {
-        
-    }
-    
-    public function editAction()
-    {
-        
-    }
-    
-    public function deleteAction()
-    {
-        
-    }
+   
 }

@@ -1,0 +1,19 @@
+TERE
+<div class="info">
+    <dl>
+        <dt>First name</dt>
+        <dd><?php echo $user['first_name']?></dd>
+        
+        <dt>Last name</dt>
+        <dd><?php echo $user['last_name']?></dd>
+        
+        <dt>E-mail</dt>
+        <dd><?php echo $user['email']?></dd>
+        
+        <dt>Created</dt>
+        <dd><?php echo date("d.m.Y H:i:s", $user['created'])?></dd>
+        
+        <dt>Last visit</dt>
+        <dd><?php echo date("d.m.Y H:i:s", $user['last_visit'])?></dd>
+    </dl>
+</div>
