@@ -1,1 +1,23 @@
-Admin user index
+<h2>Users</h2>
+<table class="datatable">
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>E-mail</th>
+        <th>Last visit</th>
+        <th>Actions</th>
+    </tr>
+    <?php foreach ($users as $user) {?>
+    <tr>
+        <td><?php echo $user['first_name']?></td>
+        <td><?php echo $user['last_name']?></td>
+        <td><?php echo $user['email']?></td>
+        <td><?php echo date("d.m.Y H:i:s", $user['last_visit'])?></td>
+        <td class="actions">
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-user', 'action'=>'view'));?>" class="small-icon view">&nbsp;</a>
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-user', 'action'=>'edit'));?>" class="small-icon edit">&nbsp;</a>
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-user', 'action'=>'delete'));?>" class="small-icon delete">&nbsp;</a>
+        </td>
+    </tr>
+    <?php } ?>
+</table>

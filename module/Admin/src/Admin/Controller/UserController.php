@@ -21,7 +21,7 @@ class UserController extends ActionController
             return $this->redirect()->toUrl('/admin-user/login');
         }
         
-        return array();
+        return array('users' => $this->user->fetchAll());
     }
     
     public function loginAction()

@@ -3,7 +3,8 @@ $this->headTitle()->setSeparator(' - ')
         ->setAutoEscape(false);
 
 $basePath = $this->basePath();
-$this->headLink()->appendStylesheet($basePath . '/css/game.css');
+$this->headLink()->appendStylesheet($basePath . '/css/admin.css');
+$this->headLink()->appendStylesheet($basePath . '/css/jquery-ui.css');
 
 $this->headLink(array(
     'rel' => 'shortcut icon',
@@ -12,6 +13,8 @@ $this->headLink(array(
 ));
 
 //$this->headScript()->appendFile($basePath . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE9',));
+$this->headScript()->appendFile($basePath . '/js/jquery-1.7.1.min.js', 'text/javascript', array());
+$this->headScript()->appendFile($basePath . '/js/jquery-ui-1.8.18.min.js', 'text/javascript', array());
 
 echo $this->doctype();
 ?>

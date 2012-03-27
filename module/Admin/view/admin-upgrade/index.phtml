@@ -1,1 +1,19 @@
-Admin upgrade index
+<h2>Upgrades</h2>
+<table class="datatable">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Actions</th>
+    </tr>
+    <?php foreach ($upgrades as $upgrade) {//var_dump($upgrade);?>
+    <tr>
+        <td><?php echo $upgrade['name']?></td>
+        <td><?php echo $upgrade['type_name']?></td>
+        <td class="actions">
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-upgrade', 'action'=>'view'));?>" class="small-icon view">&nbsp;</a>
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-upgrade', 'action'=>'edit'));?>" class="small-icon edit">&nbsp;</a>
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-upgrade', 'action'=>'delete'));?>" class="small-icon delete">&nbsp;</a>
+        </td>
+    </tr>
+    <?php } ?>
+</table>

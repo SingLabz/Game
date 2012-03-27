@@ -29,6 +29,6 @@ class BuildingController extends ActionController
             return $this->redirect()->toUrl('/admin-user/login');
         }
         
-        return array();
+        return array('buildings' => $this->building->fetchAll());
     }
 }

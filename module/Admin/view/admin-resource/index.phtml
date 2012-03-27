@@ -1,1 +1,17 @@
-Admin resource index
+<h2>Resources</h2>
+<table class="datatable">
+    <tr>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    <?php foreach ($resources as $resource) {?>
+    <tr>
+        <td><?php echo $resource['name']?></td>
+        <td class="actions">
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-resource', 'action'=>'view'));?>" class="small-icon view">&nbsp;</a>
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-resource', 'action'=>'edit'));?>" class="small-icon edit">&nbsp;</a>
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-resource', 'action'=>'delete'));?>" class="small-icon delete">&nbsp;</a>
+        </td>
+    </tr>
+    <?php } ?>
+</table>

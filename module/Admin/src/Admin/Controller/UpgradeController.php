@@ -29,6 +29,6 @@ class UpgradeController extends ActionController
             return $this->redirect()->toUrl('/admin-user/login');
         }
         
-        return array();
+        return array('upgrades' => $this->upgrade->fetchAllWithJoin());
     }
 }

@@ -1,1 +1,21 @@
-Admin base index
+<h2>Bases</h2>
+<table class="datatable">
+    <tr>
+        <th>User</th>
+        <th>Level</th>
+        <th>Location</th>
+        <th>Actions</th>
+    </tr>
+    <?php foreach ($bases as $base) {?>
+    <tr>
+        <td><?php echo $base['first_name']?> <?php echo $base['last_name']?> (<?php echo $base['email']?>)</td>
+        <td><?php echo $base['level']?></td>
+        <td><?php echo $base['location_x']?>:<?php echo $base['location_y']?></td>
+        <td class="actions">
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-base', 'action'=>'view'));?>" class="small-icon view">&nbsp;</a>
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-base', 'action'=>'edit'));?>" class="small-icon edit">&nbsp;</a>
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-base', 'action'=>'delete'));?>" class="small-icon delete">&nbsp;</a>
+        </td>
+    </tr>
+    <?php } ?>
+</table>

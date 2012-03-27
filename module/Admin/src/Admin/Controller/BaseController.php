@@ -29,6 +29,6 @@ class BaseController extends ActionController
             return $this->redirect()->toUrl('/admin-user/login');
         }
         
-        return array();
+        return array('bases' => $this->base->fetchAllWithJoin());
     }
 }

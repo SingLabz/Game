@@ -29,6 +29,6 @@ class UnitController extends ActionController
             return $this->redirect()->toUrl('/admin-user/login');
         }
         
-        return array();
+        return array('units' => $this->unit->fetchAll());
     }
 }

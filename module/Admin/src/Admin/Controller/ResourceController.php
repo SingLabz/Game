@@ -29,6 +29,6 @@ class ResourceController extends ActionController
             return $this->redirect()->toUrl('/admin-user/login');
         }
         
-        return array();
+        return array('resources' => $this->resource->fetchAll());
     }   
 }
