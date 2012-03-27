@@ -25,7 +25,10 @@ class UserController extends ActionController
     public function indexAction()
     {
         if (!$this->user->checkAuth()) {
-            return $this->redirect()->toUrl('/admin-user/login');
+            return $this->redirect()->toRoute('default', array(
+                'controller' => 'admin-user',
+                'action'     => 'login',
+            ));
         }
         
         return array('users' => $this->user->fetchAll());
@@ -34,7 +37,10 @@ class UserController extends ActionController
     public function viewAction()
     {
         if (!$this->user->checkAuth()) {
-            return $this->redirect()->toUrl('/admin-user/login');
+            return $this->redirect()->toRoute('default', array(
+                'controller' => 'admin-user',
+                'action'     => 'login',
+            ));
         }
         
         $user_id = $this->getRequest()->query()->get('id', false);
@@ -55,7 +61,7 @@ class UserController extends ActionController
         if (!$this->user->checkAuth()) {
             return $this->redirect()->toRoute('default', array(
                 'controller' => 'admin-user',
-                'action'     => 'index',
+                'action'     => 'login',
             ));
         }
         
@@ -111,7 +117,10 @@ class UserController extends ActionController
     public function deleteAction()
     {
         if (!$this->user->checkAuth()) {
-            return $this->redirect()->toUrl('/admin-user/login');
+            return $this->redirect()->toRoute('default', array(
+                'controller' => 'admin-user',
+                'action'     => 'login',
+            ));
         }
         
         $id = $this->getRequest()->query()->get('id', false);
@@ -127,6 +136,13 @@ class UserController extends ActionController
     
     public function loginAction()
     {
+        if ($this->user->checkAuth()) {
+            return $this->redirect()->toRoute('default', array(
+                'controller' => 'admin-index',
+                'action'     => 'index',
+            ));
+        }
+        
         if ($this->getRequest()->isPost()) {
             $data = $this->getRequest()->post()->toArray();
             if (!empty($data['email']) && !empty($data['passw'])) {

@@ -8,9 +8,9 @@
     <tr>
         <td><?php echo $unit['name']?></td>
         <td class="actions">
-            <a href="<?php echo $this->url('default', array('controller'=>'admin-unit', 'action'=>'view'));?>" class="small-icon view">&nbsp;</a>
-            <a href="<?php echo $this->url('default', array('controller'=>'admin-unit', 'action'=>'edit'));?>" class="small-icon edit">&nbsp;</a>
-            <a href="<?php echo $this->url('default', array('controller'=>'admin-unit', 'action'=>'delete'));?>" class="small-icon delete">&nbsp;</a>
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-unit', 'action'=>'view')).'?id='.$unit['id'];?>" class="small-icon view">&nbsp;</a>
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-unit', 'action'=>'edit')).'?id='.$unit['id'];?>" class="small-icon edit">&nbsp;</a>
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-unit', 'action'=>'delete')).'?id='.$unit['id'];?>" class="small-icon delete">&nbsp;</a>
         </td>
     </tr>
     <?php } ?>

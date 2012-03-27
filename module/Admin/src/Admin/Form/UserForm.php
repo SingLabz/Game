@@ -38,10 +38,6 @@ class UserForm extends Form
         $submit->setAttrib('id', 'submit_button')
                ->setLabel('Save');
         
-        $cancel = new Element\Button('cancel');
-        $cancel->setAttrib('id', 'cancel_button')
-               ->setLabel('Cancel');
-        
-        $this->addElements(array($id, $fist_name, $last_name, $email, $passw, $submit, $cancel));
+        $this->addElements(array($id, $fist_name, $last_name, $email, $passw, $submit));
     }
 }
