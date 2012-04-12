@@ -1,6 +1,6 @@
 <?php
 return array(
-    'di'                    => array(
+    'di' => array(
         'instance' => array(
             'alias' => array(
                 'admin-index'       => 'Admin\Controller\IndexController',
@@ -11,6 +11,11 @@ return array(
                 'admin-upgrade'     => 'Admin\Controller\UpgradeController',
                 'admin-resource'    => 'Admin\Controller\ResourceController',
             ), 
+            'Admin\Form\UpgradeForm' => array(
+                'parameters' => array(
+                    'type' => 'Game\Model\System\Type',
+                ),
+            ),
             'Admin\Controller\IndexController' => array(
                 'parameters' => array(
                     'user' => 'Game\Model\User',

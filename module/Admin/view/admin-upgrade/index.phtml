@@ -10,9 +10,9 @@
         <td><?php echo $upgrade['name']?></td>
         <td><?php echo $upgrade['type_name']?></td>
         <td class="actions">
-            <a href="<?php echo $this->url('default', array('controller'=>'admin-upgrade', 'action'=>'view'));?>" class="small-icon view">&nbsp;</a>
-            <a href="<?php echo $this->url('default', array('controller'=>'admin-upgrade', 'action'=>'edit'));?>" class="small-icon edit">&nbsp;</a>
-            <a href="<?php echo $this->url('default', array('controller'=>'admin-upgrade', 'action'=>'delete'));?>" class="small-icon delete">&nbsp;</a>
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-upgrade', 'action'=>'view')).'?id='.$upgrade['id'];?>" class="small-icon view">&nbsp;</a>
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-upgrade', 'action'=>'edit')).'?id='.$upgrade['id'];?>" class="small-icon edit">&nbsp;</a>
+            <a href="<?php echo $this->url('default', array('controller'=>'admin-upgrade', 'action'=>'delete')).'?id='.$upgrade['id'];?>" class="small-icon delete">&nbsp;</a>
         </td>
     </tr>
     <?php } ?>

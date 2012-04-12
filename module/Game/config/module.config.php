@@ -43,6 +43,11 @@ return array(
                     'config' => 'Zend\Db\Adapter\Mysqli'
                 ),
             ),
+            'Game\Model\System\Type' => array(
+                'parameters' => array(
+                    'config' => 'Zend\Db\Adapter\Mysqli'
+                ),
+            ),
             'Zend\Db\Adapter\Mysqli' => array(
                 'parameters' => array(
                     'config' => array(

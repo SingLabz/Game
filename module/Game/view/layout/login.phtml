@@ -3,6 +3,8 @@ $this->headTitle()->setSeparator(' - ')
         ->setAutoEscape(false);
 
 $basePath = $this->basePath();
+$this->headLink()->appendStylesheet($basePath . '/css/blueprint/screen.css', 'screen');
+$this->headLink()->appendStylesheet($basePath . '/css/blueprint/print.css', 'print');
 $this->headLink()->appendStylesheet($basePath . '/css/main.css');
 
 $this->headLink(array(
